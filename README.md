@@ -10,16 +10,16 @@ Sistema para registrar y llevar el seguimiento del estado de vehículos que ingr
 
 ## Estado
 
-En desarrollo inicial. Funcionalidades y stack tecnológico se irán definiendo a medida que avance el proyecto.
+Frontend estático en progreso. Se armó la estructura de carpetas, tres páginas (inicio con dashboard, listado de vehículos, alta de vehículo) con estilos y layout responsive. Backend y persistencia de datos todavía no se empezaron.
 
 ## Ruta de armado
 
 Checklist de construcción paso a paso. Se marca a medida que se completa cada etapa.
 
-- [ ] **1. Estructura** — crear el esqueleto de carpetas del proyecto (`backend/`, `frontend/`, subcarpetas).
-- [ ] **2. HTML** — maquetar las vistas principales (inicio, alta de vehículo, listado, detalle).
-- [ ] **3. CSS** — aplicar estilos y diseño responsivo.
-- [ ] **4. JS del cliente** — interactividad básica (formularios, navegación, eventos).
+- [x] **1. Estructura** — crear el esqueleto de carpetas del proyecto (`backend/`, `frontend/`, subcarpetas).
+- [x] **2. HTML** — maquetar las vistas principales (inicio, alta de vehículo, listado, detalle).
+- [x] **3. CSS** — aplicar estilos y diseño responsivo.
+- [ ] **4. JS del cliente** — interactividad básica (formularios, navegación, eventos). *(en progreso: DOM ya enganchado)*
 - [ ] **5. Backend: setup** — elegir stack, inicializar proyecto y configurar entorno.
 - [ ] **6. Base de datos** — diseñar el modelo entidad-relación y conectar el backend.
 - [ ] **7. API / endpoints** — implementar los CRUD de vehículos, clientes y órdenes de trabajo.
