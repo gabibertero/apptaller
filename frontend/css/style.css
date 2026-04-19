@@ -54,6 +54,11 @@ nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    font-weight: bold;
+}
+
 main {
     flex: 1;
     padding: 2rem;
@@ -103,4 +108,111 @@ main h2 {
     main {
         padding: 1rem;
     }
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tabla th,
+.tabla td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla thead {
+    background-color: #f0f2f5;
+}
+
+.tabla th {
+    font-weight: 600;
+    color: #555;
+}
+
+.tabla tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.formulario {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+}
+
+.campo {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.campo input {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #1e3a5f;
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+.acciones {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primario {
+    background-color: #1e3a5f;
+    color: white;
+}
+
+.btn-primario:hover {
+    background-color: #2c4e7a;
+}
+
+.btn-secundario {
+    background-color: #e5e7eb;
+    color: #333;
+}
+
+.btn-secundario:hover {
+    background-color: #d1d5db;
+}
+
+.barra-acciones {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
 }
