@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Alta de Veh&iacute;culo - App del Taller</title>
+    <title>Editar Veh&iacute;culo - App del Taller</title>
 </head>
 <body>
     <header>
-        <h1>Alta de Veh&iacute;culo</h1>
+        <h1>Editar Veh&iacute;culo</h1>
     </header>
     <div class="layout">
         <nav>
@@ -21,8 +21,9 @@
             </ul>
         </nav>
         <main>
-            <h2>Nuevo Veh&iacute;culo</h2>
-            <form id="form-alta" class="formulario" novalidate>
+            <h2>Editar Veh&iacute;culo</h2>
+            <div id="mensaje-edicion" class="estado-pagina" hidden></div>
+            <form id="form-editar" class="formulario" novalidate>
                 <div class="campo">
                     <label for="patente">Patente</label>
                     <input type="text" id="patente" name="patente" placeholder="AB123CD" maxlength="7" required>
@@ -48,13 +49,24 @@
                     <input type="text" id="cliente" name="cliente" placeholder="Juan P&eacute;rez" required>
                     <p class="campo-error" id="error-cliente" aria-live="polite"></p>
                 </div>
+                <div class="campo">
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado" required>
+                        <option value="Recibido">Recibido</option>
+                        <option value="En diagn&#243;stico">En diagn&oacute;stico</option>
+                        <option value="Reparando">Reparando</option>
+                        <option value="Listo para entregar">Listo para entregar</option>
+                        <option value="Entregado">Entregado</option>
+                    </select>
+                    <p class="campo-error" id="error-estado" aria-live="polite"></p>
+                </div>
                 <div class="acciones">
                     <a href="vehiculos.html" class="btn btn-secundario">Cancelar</a>
-                    <button type="submit" class="btn btn-primario">Guardar</button>
+                    <button type="submit" class="btn btn-primario">Guardar cambios</button>
                 </div>
             </form>
         </main>
     </div>
-    <script type="module" src="js/alta-vehiculo.js"></script>
+    <script type="module" src="js/editar-vehiculo.js"></script>
 </body>
 </html>

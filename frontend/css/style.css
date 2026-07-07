@@ -95,21 +95,6 @@ main h2 {
     color: #1e3a5f;
 }
 
-@media (max-width: 768px) {
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
-
-    nav {
-        width: 160px;
-        padding: 1rem 0.5rem;
-    }
-
-    main {
-        padding: 1rem;
-    }
-}
-
 .tabla {
     width: 100%;
     border-collapse: collapse;
@@ -124,6 +109,7 @@ main h2 {
     padding: 0.75rem 1rem;
     text-align: left;
     border-bottom: 1px solid #eee;
+    vertical-align: top;
 }
 
 .tabla thead {
@@ -137,6 +123,11 @@ main h2 {
 
 .tabla tbody tr:hover {
     background-color: #fafafa;
+}
+
+.tabla-vacia {
+    text-align: center;
+    color: #888;
 }
 
 .formulario {
@@ -160,18 +151,33 @@ main h2 {
     font-size: 0.9rem;
 }
 
-.campo input {
+.campo input,
+.campo select {
     padding: 0.6rem 0.75rem;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
     font-family: inherit;
+    background-color: white;
 }
 
-.campo input:focus {
+.campo input:focus,
+.campo select:focus {
     outline: none;
     border-color: #1e3a5f;
     box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+.input-error {
+    border-color: #c0392b !important;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12) !important;
+}
+
+.campo-error {
+    min-height: 1.1rem;
+    margin-top: 0.35rem;
+    color: #c0392b;
+    font-size: 0.85rem;
 }
 
 .acciones {
@@ -179,6 +185,12 @@ main h2 {
     gap: 0.75rem;
     justify-content: flex-end;
     margin-top: 2rem;
+}
+
+.acciones-fila {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -191,6 +203,11 @@ main h2 {
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.2s;
+}
+
+.btn-tabla {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
 }
 
 .btn-primario {
@@ -211,8 +228,66 @@ main h2 {
     background-color: #d1d5db;
 }
 
+.btn-peligro {
+    background-color: #c0392b;
+    color: white;
+}
+
+.btn-peligro:hover {
+    background-color: #a53125;
+}
+
 .barra-acciones {
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: flex-start;
+}
+
+.estado-pagina {
+    margin-bottom: 1rem;
+    padding: 1rem 1.25rem;
+    background-color: white;
+    border-left: 4px solid #1e3a5f;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.estado-pagina a {
+    color: #1e3a5f;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        width: 100%;
+        min-height: auto;
+        padding: 1rem 0.5rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .tabla {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .acciones {
+        justify-content: flex-start;
+        flex-direction: column-reverse;
+    }
+
+    .acciones .btn {
+        width: 100%;
+        text-align: center;
+    }
 }

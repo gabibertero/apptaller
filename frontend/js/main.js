@@ -1,9 +1,10 @@
-const stats = {
-    vehiculos: 12,
-    pendientes: 5,
-    listos: 3,
-}
+import { getAll } from "./storage/vehiculos.js";
 
-document.getElementById("count-vehiculos").textContent = stats.vehiculos;
-document.getElementById("count-pendientes").textContent = stats.pendientes;
-document.getElementById("count-listos").textContent = stats.listos;
+const vehiculos = getAll();
+const vehiculosActivos = vehiculos.filter((vehiculo) => vehiculo.estado !== "Entregado");
+const vehiculosPendientes = vehiculos.filter((vehiculo) => vehiculo.estado === "Recibido" || vehiculo.estado === "En diagnóstico");
+const vehiculosListos = vehiculos.filter((vehiculo) => vehiculo.estado === "Listo para entregar");
+
+document.getElementById("count-vehiculos").textContent = String(vehiculosActivos.length);
+document.getElementById("count-pendientes").textContent = String(vehiculosPendientes.length);
+document.getElementById("count-listos").textContent = String(vehiculosListos.length);
